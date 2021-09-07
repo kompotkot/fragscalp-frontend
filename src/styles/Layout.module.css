@@ -1,0 +1,23 @@
+.container {
+	display: grid;
+	grid-template-rows: auto 1fr auto; /*Footer small on top, full main and footer on bottom*/
+
+	height: 100vh;
+	padding: 24px;
+}
+
+.header {
+    align-items: center;
+    display: flex;
+    justify-content: center;    /*Work together with flex*/
+    margin-bottom: 32px;
+}
+
+.main {
+}
+
+.footer {
+    font-size: 0.75rem;
+    margin-top: 32px;
+    text-align: center;
+}

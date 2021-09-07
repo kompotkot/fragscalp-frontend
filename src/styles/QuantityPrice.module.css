@@ -1,0 +1,47 @@
+.quantity_price {
+	/* border: 1px solid red; */
+	min-width: 20px;
+	width: 25%;
+}
+
+.ask_row_empty {
+	color: white;
+	background-color: var(--background-color-dark);
+}
+.ask_row {
+	color: white;
+	background-color: #63171b;
+}
+.ask_row_first {
+	color: white;
+	background-color: #63171b;
+}
+
+.bid_row_empty {
+	color: white;
+	background-color: var(--background-color-dark);
+}
+.bid_row {
+	color: white;
+	background-color: #1d4044;
+}
+.bid_row_first {
+	color: white;
+	background-color: #1d4044;
+}
+
+.mid_row {
+	color: white;
+	background-color: var(--background-color-dark);
+}
+
+.quantity {
+    padding-left: 5px;
+}
+
+.price {
+    /* border: 1px solid orange; */
+    float:right;
+    text-align: center;
+	width: 40%;
+}

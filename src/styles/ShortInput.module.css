@@ -1,0 +1,29 @@
+.wr {
+	align-items: center;
+	/* display: flex; */
+}
+
+.input {
+	background-color: transparent;
+	border: 1px solid var(--background-color-button);
+	border-radius: 8px;
+	color: var(--text-color-light);
+	margin: 10px;
+	height: 100%;
+	padding: 10px;
+	outline: none;
+    text-align: right;
+	width: 4rem;
+}
+
+.input:focus {
+	border: 1px solid var(--primary-color);
+}
+
+.input:hover {
+	background-color: var(--background-color-input-hover);
+}
+
+.input::placeholder {
+	color: var(--text-secondary);
+}

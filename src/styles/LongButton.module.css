@@ -1,0 +1,22 @@
+.wrapper {
+	align-items: center;
+	display: flex;
+}
+
+.button {
+	background-color: var(--background-color-button);
+	border: 1px solid var(--background-color-button);
+	border-radius: 8px;
+	color: var(--text-color-light);
+	margin: 10px;
+	height: 100%;
+	padding: 10px;
+	outline: none;
+	width: 20rem;
+}
+
+.button:hover {
+	background-color: var(--background-color-button-hover);
+	border: 1px solid var(--primary-color);
+	color: var(--text-color-light);
+}

@@ -1,0 +1,56 @@
+.settings {
+	border: 1px solid blue;
+	min-width: 20px;
+	width: 20%;
+}
+
+.block_wrapper {
+	/* border: 1px solid yellow; */
+	width: 100%;
+}
+
+/*Text*/
+.label_hint {
+	color: var(--text-color-light);
+	padding-left: 5px;
+}
+
+.label_string {
+	padding-left: 10px;
+}
+
+.label_highlighted {
+	padding-left: 10px;
+	color: #4299e1;
+}
+
+/*Buttons*/
+#deal_input {
+	text-align: right;
+	width: 100%;
+}
+
+#btn_buy {
+	background-color: #1d4044;
+	width: 40%;
+}
+#btn_buy:hover {
+	background-color: var(--background-color-button-hover);
+}
+
+#btn_sell {
+	background-color: #63171b;
+	width: 40%;
+	float: right;
+}
+#btn_sell:hover {
+	background-color: var(--background-color-button-hover);
+}
+
+#btn_close {
+	background-color: #4299e1;
+	width: 100%;
+}
+#btn_close:hover {
+	background-color: var(--background-color-button-hover);
+}

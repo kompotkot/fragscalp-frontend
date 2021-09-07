@@ -1,0 +1,22 @@
+.wrapper {
+	/* border: 1px solid purple; */
+	display: flex;
+	/* position: relative; */
+}
+
+.glass {
+	/* border: 1px solid black; */
+	box-sizing: border-box;
+	font-size: 12px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	max-height: 80vh;
+	overflow-y: scroll;
+	scrollbar-width: thin;
+	width: 70%;
+}
+
+.glass li {
+	display: flex;
+}
