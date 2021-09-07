@@ -1,4 +1,5 @@
-import { Row, Trade, Tx } from "../../api/data"
+import React, { useState } from "react"
+
 import LongButton from "../LongButton"
 import LongInput from "../LongInput"
 import LongSelect from "../LongSelect"
@@ -7,40 +8,60 @@ import ShortInput from "../ShortInput"
 import styles from "../../styles/HotSettings.module.css"
 
 const HotSettings = () => {
-	let glassFillQuantity = 5
-	let tradesFillQuantity = 3
-	let txpoolFillQuantity = 12
+	// const [tickerState, setTickerState] = useState<string>("bnbusdt")
+
+	const [glassFillQuantityState, setGlassFillQuantityState] =
+		useState<number>(5)
+	const [tradesFillQuantityState, setTradesFillQuantityState] =
+		useState<number>(3)
+	const [txpoolFillQuantityState, setTxpoolFillQuantityState] =
+		useState<number>(12)
+
 	return (
 		<span className={styles.settings}>
 			<div className={styles.block_wrapper}>
 				<LongSelect name="ticker">
 					<option value="bnbusdt">BNBUSDT</option>
-					<option value="ethusdt">ETHUSDT</option>
 				</LongSelect>
 			</div>
 			<br />
-			<div>
+			<div className={styles.settings_wrapper}>
 				<div className={styles.block_wrapper}>
-					<ShortInput value={glassFillQuantity} />
+					<ShortInput
+						value={glassFillQuantityState}
+						onChange={(e) =>
+							setGlassFillQuantityState(parseInt(e.target.value))
+						}
+					/>
 					<label className={styles.label_hint}>
 						glass fill quantity
 					</label>
 				</div>
 				<div className={styles.block_wrapper}>
-					<ShortInput value={tradesFillQuantity} />
+					<ShortInput
+						value={tradesFillQuantityState}
+						onChange={(e) =>
+							setTradesFillQuantityState(parseInt(e.target.value))
+						}
+					/>
 					<label className={styles.label_hint}>
 						trades fill quantity
 					</label>
 				</div>
 				<div className={styles.block_wrapper}>
-					<ShortInput value={txpoolFillQuantity} />
+					<ShortInput
+						value={txpoolFillQuantityState}
+						onChange={(e) =>
+							setTxpoolFillQuantityState(parseInt(e.target.value))
+						}
+					/>
 					<label className={styles.label_hint}>
 						txpool fill quantity
 					</label>
 				</div>
 			</div>
 			<br />
-			<div>
+			<div className={styles.position_wrapper}>
 				<div className={styles.block_wrapper}>
 					<label className={styles.label_string}>
 						open price:

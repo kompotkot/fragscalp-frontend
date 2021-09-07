@@ -1,5 +1,11 @@
 .position {
-    /* border: 1px solid blue; */
-    min-width: 20px;
-    width: 5%;
+	/* border: 1px solid blue; */
+	min-width: 20px;
+	width: 5%;
+}
+
+.active {
+    color: white;
+    padding-left: 10px;
+    /* background-color: red; */
 }

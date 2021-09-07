@@ -1,7 +1,7 @@
 .quantity_price {
 	/* border: 1px solid red; */
 	min-width: 20px;
-	width: 25%;
+	width: 20%;
 }
 
 .ask_row_empty {
@@ -36,12 +36,22 @@
 }
 
 .quantity {
-    padding-left: 5px;
+	padding-left: 5px;
 }
 
 .price {
-    /* border: 1px solid orange; */
-    float:right;
-    text-align: center;
+	border: 1px solid transparent;
+	float: right;
+	text-align: center;
 	width: 40%;
+}
+
+/* Remove text selection in quantity - price fields */
+.noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently */
 }
