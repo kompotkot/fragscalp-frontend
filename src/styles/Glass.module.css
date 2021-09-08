@@ -1,11 +1,12 @@
 .wrapper {
 	/* border: 1px solid purple; */
+	
 	display: flex;
-	/* position: relative; */
 }
 
 .glass {
-	/* border: 1px solid black; */
+	/* border: 1px solid var(--primary-color); */
+
 	box-sizing: border-box;
 	font-size: 12px;
 	margin: 0;

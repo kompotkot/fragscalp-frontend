@@ -7,15 +7,15 @@ import ShortButton from "../ShortButton"
 import ShortInput from "../ShortInput"
 import styles from "../../styles/HotSettings.module.css"
 
-const HotSettings = () => {
+const HotSettings = ({
+	maxVolumeFill,
+	setMaxVolumeFill,
+	tradesFillQuantity,
+	setTradesFillQuantity,
+	txpoolFillQuantity,
+	setTxpoolFillQuantity
+}) => {
 	// const [tickerState, setTickerState] = useState<string>("bnbusdt")
-
-	const [glassFillQuantityState, setGlassFillQuantityState] =
-		useState<number>(5)
-	const [tradesFillQuantityState, setTradesFillQuantityState] =
-		useState<number>(3)
-	const [txpoolFillQuantityState, setTxpoolFillQuantityState] =
-		useState<number>(12)
 
 	return (
 		<span className={styles.settings}>
@@ -28,9 +28,9 @@ const HotSettings = () => {
 			<div className={styles.settings_wrapper}>
 				<div className={styles.block_wrapper}>
 					<ShortInput
-						value={glassFillQuantityState}
+						value={maxVolumeFill}
 						onChange={(e) =>
-							setGlassFillQuantityState(parseInt(e.target.value))
+							setMaxVolumeFill(parseInt(e.target.value))
 						}
 					/>
 					<label className={styles.label_hint}>
@@ -39,9 +39,9 @@ const HotSettings = () => {
 				</div>
 				<div className={styles.block_wrapper}>
 					<ShortInput
-						value={tradesFillQuantityState}
+						value={tradesFillQuantity}
 						onChange={(e) =>
-							setTradesFillQuantityState(parseInt(e.target.value))
+							setTradesFillQuantity(parseInt(e.target.value))
 						}
 					/>
 					<label className={styles.label_hint}>
@@ -50,9 +50,9 @@ const HotSettings = () => {
 				</div>
 				<div className={styles.block_wrapper}>
 					<ShortInput
-						value={txpoolFillQuantityState}
+						value={txpoolFillQuantity}
 						onChange={(e) =>
-							setTxpoolFillQuantityState(parseInt(e.target.value))
+							setTxpoolFillQuantity(parseInt(e.target.value))
 						}
 					/>
 					<label className={styles.label_hint}>

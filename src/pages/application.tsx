@@ -48,8 +48,6 @@ const Application = () => {
 	const [tradeState, setTradeState] = useState<any | Trade>(testTrade)
 	const [txpoolState, setTxpoolState] = useState<any | Tx>(undefined)
 
-	const [maxVolumeFill, setMaxVolumeFill] = useState<number>(5) // Store user defined max filled of volume bar
-
 	useEffect(() => {
 		const tokenId = localStorage.getItem("token")
 		if (tokenId) {
@@ -109,7 +107,6 @@ const Application = () => {
 						depth={depthState}
 						trade={tradeState}
 						txpool={txpoolState}
-						maxVolumeFill={maxVolumeFill}
 					></Glass>
 				) : (
 					<div className={styles.div_forbidden}>

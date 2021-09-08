@@ -29,7 +29,7 @@
 
 .label_highlighted {
 	padding-left: 10px;
-	color: #4299e1;
+	color: var(--primary-color);
 }
 
 /*Buttons*/
@@ -56,7 +56,7 @@
 }
 
 #btn_close {
-	background-color: #4299e1;
+	background-color: var(--primary-color);
 	width: 100%;
 }
 #btn_close:hover {

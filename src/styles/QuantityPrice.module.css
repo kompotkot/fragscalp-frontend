@@ -36,6 +36,12 @@
 }
 
 .quantity {
+	border-bottom: 2px solid transparent; /* Need it to fit price border hover */
+	background-color: #2c5282;
+	float: left;
+}
+
+.quantity_text {
 	padding-left: 5px;
 }
 

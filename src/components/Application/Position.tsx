@@ -1,14 +1,16 @@
 import { Row, Trade, Tx } from "../../api/data"
 import styles from "../../styles/Position.module.css"
 
-const Position = ({ positionState, row }) => {
+const Position = ({ position, row }) => {
 	let rowClassType
 
 	return (
 		<span className={styles.position}>
-			{positionState === row.price.toString()
-				? <div className={styles.active}>←</div>
-				: ""}
+			{position?.price === row.price ? (
+				<div className={styles.active}>←</div>
+			) : (
+				""
+			)}
 		</span>
 	)
 }

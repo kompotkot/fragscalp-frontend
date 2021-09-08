@@ -32,15 +32,17 @@
 
 .ul_navigation li {
 	display: inline-block; /* List in horizontal */
-	padding: 0 30px;
+	padding: 0 15px;
 }
 
 .ul_navigation li a {
 	transition: all 0.3s ease 0s;
+	padding: 6px 15px;
 }
 
 .ul_navigation li a:hover {
 	color: var(--primary-color);
+	border-bottom: 1px solid var(--primary-color);
 }
 
 .div_main {

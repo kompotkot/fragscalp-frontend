@@ -8,24 +8,26 @@ import TxpoolBlock from "./TxpoolBlock"
 import QuantityPrice from "./QuantityPrice"
 import styles from "../../styles/Glass.module.css"
 
-const Glass = ({ depth, trade, txpool, maxVolumeFill }) => {
-	const [positionState, setPositionState] = useState<number>(null)
+const Glass = ({ depth, trade, txpool }) => {
+	const [position, setPosition] = useState<Row>(undefined)
 
-	const selectPrice = (event) => {
+	const [maxVolumeFill, setMaxVolumeFill] = useState<number>(5) // Store user defined max filled of volume bar
+	const [tradesFillQuantity, setTradesFillQuantity] = useState<number>(3)
+	const [txpoolFillQuantity, setTxpoolFillQuantity] = useState<number>(12)
+
+	const selectPrice = (event, row: Row) => {
+		/*
+		Set position in the glass.
+		*/
 		event.preventDefault()
-		
-		const chosenPrice = event.target.textContent
 
-		if (positionState === chosenPrice) {
-			setPositionState(null)
-			// event.target.style.background = "gray"
-		} else if (positionState) {
+		if (position?.price === row.price) {
+			setPosition(undefined)
+		} else if (position) {
 			console.log("First close current position")
 			return
 		} else {
-			setPositionState(chosenPrice)
-			// event.target.style.background = "red"
-			// console.log(chosenPrice)
+			setPosition(row)
 		}
 	}
 
@@ -39,16 +41,24 @@ const Glass = ({ depth, trade, txpool, maxVolumeFill }) => {
 							<QuantityPrice
 								row={row}
 								selectPrice={(e) => {
-									selectPrice(e)
+									selectPrice(e, row)
 								}}
+								maxVolumeFill={maxVolumeFill}
 							/>
-							<Position positionState={positionState} row={row} />
+							<Position position={position} row={row} />
 						</li>
 					)
 				})}
 			</ul>
 			<TxpoolBlock txpool={txpool} />
-			<HotSettings />
+			<HotSettings
+				maxVolumeFill={maxVolumeFill}
+				setMaxVolumeFill={setMaxVolumeFill}
+				tradesFillQuantity={tradesFillQuantity}
+				setTradesFillQuantity={setTradesFillQuantity}
+				txpoolFillQuantity={txpoolFillQuantity}
+				setTxpoolFillQuantity={setTxpoolFillQuantity}
+			/>
 		</div>
 	)
 }
