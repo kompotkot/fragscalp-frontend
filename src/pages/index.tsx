@@ -1,18 +1,15 @@
-import Head from "next/head"
-import Image from "next/image"
-import styles from "../styles/Home.module.css"
-
 import Layout from "../components/Layout"
 
-export default function Home() {
-	return <Layout>main</Layout>
+import styles from "../styles/Index.module.css"
+
+const Index = () => {
+	return (
+		<Layout>
+			<div className={styles.div_index}>
+				High-frequency bid/ask list for traders
+			</div>
+		</Layout>
+	)
 }
 
-export const getStaticProps = async (): Promise<any> => {
-  // const res = fetch
-  return {
-    props: {
-
-    }
-  }
-}
+export default Index

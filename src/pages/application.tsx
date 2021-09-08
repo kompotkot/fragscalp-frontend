@@ -3,8 +3,11 @@ import React, { useEffect, useState } from "react"
 import { Row, Trade, Tx, testDepth, testTrade } from "../api/data"
 import Glass from "../components/Application/Glass"
 import Layout from "../components/Layout"
+import styles from "../styles/Application.module.css"
 
 const Application = () => {
+	const [token, setToken] = useState<string>("")
+
 	// WebSocket definition
 	let ws: WebSocket
 	const [wsConnection, setWsConnection] = useState<WebSocket | null>(null)
@@ -48,10 +51,11 @@ const Application = () => {
 	const [maxVolumeFill, setMaxVolumeFill] = useState<number>(5) // Store user defined max filled of volume bar
 
 	useEffect(() => {
-		// const tokenId = localStorage.getItem("token")
-		// if (tokenId) {
-		// 	setToken(tokenId)
-		// }
+		const tokenId = localStorage.getItem("token")
+		if (tokenId) {
+			setToken(tokenId)
+		}
+
 		// Execute first connection with Exchange WebSocket
 		createWsConnection()
 	}, [])
@@ -100,12 +104,18 @@ const Application = () => {
 	return (
 		<Layout>
 			<div>
-				<Glass
-					depth={depthState}
-					trade={tradeState}
-					txpool={txpoolState}
-					maxVolumeFill={maxVolumeFill}
-				></Glass>
+				{token ? (
+					<Glass
+						depth={depthState}
+						trade={tradeState}
+						txpool={txpoolState}
+						maxVolumeFill={maxVolumeFill}
+					></Glass>
+				) : (
+					<div className={styles.div_forbidden}>
+						Please log in to see the glass.
+					</div>
+				)}
 			</div>
 		</Layout>
 	)

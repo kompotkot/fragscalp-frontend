@@ -1,0 +1,19 @@
+.div_account {
+	/* border: 1px solid red; */
+
+	margin: auto;
+	padding: 10px;
+	width: 22rem;
+}
+
+.div_block {
+	text-align: center;
+}
+
+#btn_special {
+	background-color: var(--secondary-color);
+}
+
+#btn_special:hover {
+	background-color: var(--background-color-dark);
+}

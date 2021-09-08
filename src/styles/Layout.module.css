@@ -1,23 +1,53 @@
-.container {
+.div_html {
 	display: grid;
 	grid-template-rows: auto 1fr auto; /*Footer small on top, full main and footer on bottom*/
-
 	height: 100vh;
-	padding: 24px;
+	padding: 14px;
 }
 
-.header {
-    align-items: center;
-    display: flex;
-    justify-content: center;    /*Work together with flex*/
-    margin-bottom: 32px;
+.div_header {
+	/* border: 1px solid red; */
+
+	align-items: center;
+	display: flex;
+	justify-content: space-between; /* Work together with flex */
+	margin-bottom: 32px;
+	padding: 0 10%; /* Move from left and right sides inside on 10% */
 }
 
-.main {
+.div_logo {
+	/* border: 1px solid green; */
+
+	cursor: pointer;
 }
 
-.footer {
-    font-size: 0.75rem;
-    margin-top: 32px;
-    text-align: center;
+.div_logo h1 {
+	font-weight: 700;
+	letter-spacing: 0.3em;
+}
+
+.ul_navigation {
+	/* border: 1px solid green; */
+}
+
+.ul_navigation li {
+	display: inline-block; /* List in horizontal */
+	padding: 0 30px;
+}
+
+.ul_navigation li a {
+	transition: all 0.3s ease 0s;
+}
+
+.ul_navigation li a:hover {
+	color: var(--primary-color);
+}
+
+.div_main {
+}
+
+.div_footer {
+	font-size: 0.75rem;
+	margin-top: 32px;
+	text-align: center;
 }
