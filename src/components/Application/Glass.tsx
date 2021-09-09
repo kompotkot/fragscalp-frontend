@@ -8,12 +8,22 @@ import TxpoolBlock from "./TxpoolBlock"
 import QuantityPrice from "./QuantityPrice"
 import styles from "../../styles/Glass.module.css"
 
-const Glass = ({ depth, trade, txpool }) => {
+const Glass = ({ depth, trades, txpool }) => {
 	const [position, setPosition] = useState<Row>(undefined)
 
 	const [maxVolumeFill, setMaxVolumeFill] = useState<number>(5) // Store user defined max filled of volume bar
 	const [tradesFillQuantity, setTradesFillQuantity] = useState<number>(3)
 	const [txpoolFillQuantity, setTxpoolFillQuantity] = useState<number>(12)
+
+	const getRowClassType = (row) => {
+		let rowClassType
+		if (row.position === "ask_hard") {
+			rowClassType = "ask_row_hard"
+		} else if (row.position === "bid_hard") {
+			rowClassType = "bid_row_hard"
+		}
+		return rowClassType
+	}
 
 	const selectPrice = (event, row: Row) => {
 		/*
@@ -36,8 +46,12 @@ const Glass = ({ depth, trade, txpool }) => {
 			<ul className={styles.glass}>
 				{depth.map((row: Row) => {
 					return (
-						<li key={row.price}>
-							<Trades trade={trade} rowPrice={row.price} />
+						<li className={`${styles[getRowClassType(row)]}`}>
+							<Trades
+								trades={trades}
+								rowPrice={row.price}
+								tradesFillQuantity={tradesFillQuantity}
+							/>
 							<QuantityPrice
 								row={row}
 								selectPrice={(e) => {

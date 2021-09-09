@@ -29,6 +29,7 @@ const HotSettings = ({
 				<div className={styles.block_wrapper}>
 					<ShortInput
 						value={maxVolumeFill}
+						type="number"
 						onChange={(e) =>
 							setMaxVolumeFill(parseInt(e.target.value))
 						}
@@ -40,6 +41,7 @@ const HotSettings = ({
 				<div className={styles.block_wrapper}>
 					<ShortInput
 						value={tradesFillQuantity}
+						type="number"
 						onChange={(e) =>
 							setTradesFillQuantity(parseInt(e.target.value))
 						}

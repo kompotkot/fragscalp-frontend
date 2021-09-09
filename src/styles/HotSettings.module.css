@@ -1,20 +1,14 @@
 .settings {
 	/* border: 1px solid blue; */
+
 	min-width: 20px;
 	width: 20%;
 }
 
 .block_wrapper {
 	/* border: 1px solid yellow; */
+
 	width: 100%;
-}
-
-.settings_wrapper {
-	height: 58%;
-}
-
-.position_wrapper {
-	height: 40%;
 }
 
 /*Text*/

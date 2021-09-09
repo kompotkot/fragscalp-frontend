@@ -1,6 +1,14 @@
 .trades {
-    /* border: 1px solid green; */
-    min-width: 20px;
-    width: 75%;
+	/* border: 1px solid green; */
+
+    display: flex;
+	min-width: 20px;
+	width: 75%;
 }
 
+.trade {
+	/* border: 1px solid blue; */
+
+    text-align: center;
+    flex: 1;
+}

@@ -20,3 +20,13 @@
 .glass li {
 	display: flex;
 }
+
+.ask_row_hard {
+	font-weight: 700;
+	border-top: 1px solid var(--background-color-dark-second);
+}
+
+.bid_row_hard {
+	font-weight: 700;
+	border-bottom: 1px solid var(--background-color-dark-second);
+}

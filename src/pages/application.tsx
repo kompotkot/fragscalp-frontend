@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 
-import { Row, Trade, Tx, testDepth, testTrade } from "../api/data"
+import { Row, Trade, Tx, testDepth, testTrades } from "../api/data"
 import Glass from "../components/Application/Glass"
 import Layout from "../components/Layout"
 import styles from "../styles/Application.module.css"
@@ -44,9 +44,29 @@ const Application = () => {
 		setWsConnection(ws)
 	}
 
-	const [depthState, setDepthState] = useState<Row[]>(testDepth) // Storing new fetched asks and bids for price stack
-	const [tradeState, setTradeState] = useState<any | Trade>(testTrade)
-	const [txpoolState, setTxpoolState] = useState<any | Tx>(undefined)
+	const [depth, setDepth] = useState<Row[]>(testDepth) // Storing new fetched asks and bids for price stack
+	const [trades, setTrades] = useState<Trade[]>(testTrades)
+	const [txpool, setTxpool] = useState<any | Tx>(undefined)
+
+	const tradesMaxLen = 25
+	let tempTrades: Trade[] = []
+
+	const pushTrade = (trade: Trade) => {
+		let lenTempTrades = tempTrades.length
+
+		if (lenTempTrades < tradesMaxLen) {
+			tempTrades.push(trade)
+			return
+		} else if (lenTempTrades === tradesMaxLen) {
+			tempTrades.shift()
+			tempTrades.push(trade)
+			setTrades(tempTrades)
+			return
+		} else {
+			console.log("wtf")
+			tempTrades = []
+		}
+	}
 
 	useEffect(() => {
 		const tokenId = localStorage.getItem("token")
@@ -71,15 +91,15 @@ const Application = () => {
 					} as Row
 				})
 				// console.log(depth)
-				setDepthState(depth)
+				setDepth(depth)
 			} else if (rawData.type === "trade") {
 				const trade = {
 					price: rawData.data.price,
 					quantity: rawData.data.quantity,
 					isBuyerMarketMaker: rawData.data.isBuyerMarketMaker
 				} as Trade
-				// console.log(trade)
-				setTradeState(trade)
+				// console.log(trades)
+				pushTrade(trade)
 			} else if (rawData.type === "txpool") {
 				const txpool = rawData.data.map((tx) => {
 					return {
@@ -89,7 +109,7 @@ const Application = () => {
 					} as Tx
 				})
 				console.log(txpool)
-				// setTxpoolState(txpool)
+				// setTxpool(txpool)
 			}
 		}
 
@@ -104,9 +124,9 @@ const Application = () => {
 			<div>
 				{token ? (
 					<Glass
-						depth={depthState}
-						trade={tradeState}
-						txpool={txpoolState}
+						depth={depth}
+						trades={trades}
+						txpool={txpool}
 					></Glass>
 				) : (
 					<div className={styles.div_forbidden}>

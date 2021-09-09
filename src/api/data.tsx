@@ -34,7 +34,7 @@ export const testDepth = [
 		quantity: 0
 	},
 	{
-		position: "ask",
+		position: "ask_hard",
 		price: 216,
 		quantity: 0.143
 	},
@@ -85,7 +85,7 @@ export const testDepth = [
 		quantity: 0.143
 	},
 	{
-		position: "ask",
+		position: "ask_hard",
 		price: 215,
 		quantity: 0
 	},
@@ -135,7 +135,7 @@ export const testDepth = [
 		quantity: 0
 	},
 	{
-		position: "ask",
+		position: "ask_hard",
 		price: 214,
 		quantity: 21.132
 	},
@@ -185,7 +185,7 @@ export const testDepth = [
 		quantity: 0.2
 	},
 	{
-		position: "bid",
+		position: "bid_hard",
 		price: 213,
 		quantity: 0
 	},
@@ -235,7 +235,7 @@ export const testDepth = [
 		quantity: 0
 	},
 	{
-		position: "bid",
+		position: "bid_hard",
 		price: 212,
 		quantity: 0
 	},
@@ -285,7 +285,7 @@ export const testDepth = [
 		quantity: 2.31
 	},
 	{
-		position: "bid",
+		position: "bid_hard",
 		price: 210,
 		quantity: 0
 	},
@@ -321,8 +321,30 @@ export const testDepth = [
 	}
 ]
 
-export const testTrade = {
-	price: 213.3,
-	quantity: 0.02,
-	isBuyerMarketMaker: true
-} as Trade
+export const testTrades = [
+	{
+		price: 214.3,
+		quantity: 0.02,
+		isBuyerMarketMaker: true
+	},
+	{
+		price: 213.2,
+		quantity: 20.02,
+		isBuyerMarketMaker: false
+	},
+	{
+		price: 213.1,
+		quantity: 0.02,
+		isBuyerMarketMaker: false
+	},
+	{
+		price: 213,
+		quantity: 0.5,
+		isBuyerMarketMaker: true
+	},
+	{
+		price: 211.9,
+		quantity: 1.42,
+		isBuyerMarketMaker: true
+	}
+]

@@ -7,14 +7,19 @@ const QuantityPrice = ({ row, selectPrice, maxVolumeFill }) => {
 	// const [positionState, setPositionState] = useState<number>(null)
 
 	// const maxVolumeFill = 10
+	console.log(row.price % 10)
 
 	let rowClassType
 	if (row.position === "ask" && row.quantity !== 0) {
 		rowClassType = "ask_row"
+	} else if (row.position === "ask_hard") {
+		rowClassType = "ask_row_hard"
 	} else if (row.position === "ask" && row.quantity === 0) {
 		rowClassType = "ask_row_empty"
 	} else if (row.position === "bid" && row.quantity !== 0) {
 		rowClassType = "bid_row"
+	} else if (row.position === "bid_hard") {
+		rowClassType = "bid_row_hard"
 	} else if (row.position === "bid" && row.quantity === 0) {
 		rowClassType = "bid_row_empty"
 	} else {
@@ -37,12 +42,11 @@ const QuantityPrice = ({ row, selectPrice, maxVolumeFill }) => {
 		"quantity span" + "price span"
 		*/
 		const percentWidthSpanValue = 60
-
-		const calcPercent = (quantity * percentWidthSpanValue) / maxVolumeFill
-		if (calcPercent > percentWidthSpanValue) {
-			return percentWidthSpanValue + "%"
+		if (quantity < maxVolumeFill) {
+			return (quantity * percentWidthSpanValue) / maxVolumeFill + "%"
 		}
-		return calcPercent + "%"
+
+		return 60 + "%"
 	}
 
 	return (
