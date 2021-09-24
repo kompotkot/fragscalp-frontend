@@ -17,7 +17,7 @@ const Layout = ({ children, title = "fragscalp" }) => {
 		<div className={styles.div_html}>
 			<Head>
 				<title>{title}</title>
-				<link rel="icon" href="/favicon.svg" />
+				<link rel="icon" href="https://s3.amazonaws.com/static.simiotics.com/moonstream/assets/favicon.png" />
 				<meta
 					name="description"
 					content="High-frequency trading tool for traders"
@@ -27,7 +27,7 @@ const Layout = ({ children, title = "fragscalp" }) => {
 			<header className={styles.div_header}>
 				<div className={styles.div_logo}>
 					<h1>
-						<a href="/">FRAGSCALP</a>
+						<a href="/">TRADING</a>
 					</h1>
 				</div>
 				<ul className={styles.ul_navigation}>
@@ -48,7 +48,7 @@ const Layout = ({ children, title = "fragscalp" }) => {
 
 			<main className={styles.div_main}>{children}</main>
 
-			<footer className={styles.div_footer}>© 2021 FRAGSCALP</footer>
+			<footer className={styles.div_footer}>© 2021 TRADING</footer>
 		</div>
 	)
 }

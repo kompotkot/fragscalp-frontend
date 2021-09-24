@@ -13,7 +13,8 @@
 	padding: 0;
 	max-height: 80vh;
 	overflow-y: scroll;
-	scrollbar-width: thin;
+	/* scrollbar-width: thin; */
+	scrollbar-width: none;
 	width: 70%;
 }
 

@@ -1,6 +1,28 @@
 .txpool {
     /* border: 1px solid blue; */
-    background-color: #171923;
+
     min-width: 20px;
     width: 10%;
+}
+
+.top_empty_block {
+    height: 20%;
+}
+
+.top_block {
+    background-color: var(--primary-color);
+    height: 30%;
+    opacity: .6;
+    text-align: center;
+}
+
+.bottom_block_e {
+    height: 12.5%;
+}
+
+.bottom_block_1 {
+    background-color: var(--secondary-color);
+    height: 12.5%;
+    opacity: .6;
+    text-align: center;
 }
