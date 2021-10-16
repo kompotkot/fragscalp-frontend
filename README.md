@@ -1,6 +1,6 @@
 # fragscalp-frontend
 
-The trading glass for crypto exchange.
+Trading glass for crypto exchange.
 
 ![glass_image](public/2021-09-24_13-36-21.png)
 
